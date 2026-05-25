@@ -45,3 +45,16 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.cinoptions = ':0,l1,g0,(0,W4,m1'
   end,
 })
+
+vim.pack.add{
+    { src = 'https://github.com/neovim/nvim-lspconfig' },
+}
+
+-- lsp
+if not vim.lsp.is_enabled('clangd') then
+    vim.lsp.enable('clangd', clangd_opts)
+end
+
+vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
+vim.keymap.set("n", "gD", function() vim.lsp.buf.declaration() end, opts)
+vim.keymap.set("n", "gt", function() vim.lsp.buf.type_definition() end, opts)
