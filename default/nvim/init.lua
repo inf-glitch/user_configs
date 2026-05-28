@@ -55,6 +55,20 @@ if not vim.lsp.is_enabled('clangd') then
     vim.lsp.enable('clangd', clangd_opts)
 end
 
-vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
-vim.keymap.set("n", "gD", function() vim.lsp.buf.declaration() end, opts)
-vim.keymap.set("n", "gt", function() vim.lsp.buf.type_definition() end, opts)
+-- vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
+-- vim.keymap.set("n", "gD", function() vim.lsp.buf.declaration() end, opts)
+-- vim.keymap.set("n", "gt", function() vim.lsp.buf.type_definition() end, opts)
+
+-- Function to set C/C++ specific LSP keymaps
+local function set_cpp_keymaps()
+  local opts = { buffer = 0 } -- buffer 0 means current buffer
+  vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
+  vim.keymap.set("n", "gD", function() vim.lsp.buf.declaration() end, opts)
+  vim.keymap.set("n", "gt", function() vim.lsp.buf.type_definition() end, opts)
+end
+
+-- Create autocommand for C/C++ filetypes
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "c", "cpp", "h", "hpp" },
+  callback = set_cpp_keymaps,
+})

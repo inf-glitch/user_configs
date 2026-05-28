@@ -111,10 +111,12 @@ export PATH="$PATH:/opt/mpc-hc"
 export ROS_DOMAIN_ID=100
 
 alias apt='sudo apt'
+alias apd='sudo apt update'
+alias apg='sudo apt upgrade'
 
 export PATH=$PATH:/home/$USER/riscv/bin
 
-export GITHUB_TOKEN= # my_token
+export GITHUB_TOKEN=$GITHUB_TOKEN
 export PATH=$PATH:~/.local
 
 alias 'wg_up'='sudo wg-quick up wg0'
