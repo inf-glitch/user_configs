@@ -108,11 +108,13 @@ export PATH=$HOME/.local/bin:$PATH
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 export PATH="$PATH:/opt/mpc-hc"
 
-export ROS_DOMAIN_ID=100
+# export ROS_DOMAIN_ID=100
 
-alias apt='sudo apt'
 alias apd='sudo apt update'
 alias apg='sudo apt upgrade'
+alias ai='sudo apt install'
+alias ar='sudo apt remove' 
+alias ap='sudo apt purge'
 
 export PATH=$PATH:/home/$USER/riscv/bin
 
@@ -124,7 +126,7 @@ alias 'wg_down'='sudo wg-quick down wg0'
 
 
 # opencode
-export PATH=/home/i5ububu/.opencode/bin:$PATH
+export PATH=/home/orange/.opencode/bin:$PATH
 
 # bindkey "^[p" up-line-or-search
 # bindkey "^[n" down-line-or-search
