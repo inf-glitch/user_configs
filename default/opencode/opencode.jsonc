@@ -1,0 +1,6 @@
+// first better try installing via bum
+
+{
+  "$schema": "https://opencode.ai/config.json",
+  "plugin": ["context-mode"]
+}
