@@ -3,6 +3,7 @@
 autoload -Uz promptinit
 promptinit
 prompt adam1
+prompt off  # for starship
 
 setopt histignorealldups sharehistory
 
@@ -17,6 +18,11 @@ HISTFILE=~/.zsh_history
 # Use modern completion system
 autoload -Uz compinit
 compinit
+
+# Starship Prompt Engine
+# install:
+# curl -sS https://starship.rs/install.sh | sh
+eval "$(starship init zsh)"
 
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _correct _approximate
@@ -45,6 +51,9 @@ zle -N down-line-or-beginning-search
 bindkey '^P' up-line-or-beginning-search
 bindkey '^N' down-line-or-beginning-search
 
+# bind Shift + Tab to previous option
+bindkey '^[[Z' reverse-menu-complete
+
 # apt
 alias ai='sudo apt install'
 alias apd='sudo apt update'
@@ -52,6 +61,22 @@ alias apg='sudo apt upgrade'
 alias ar='sudo apt remove'
 alias ap='sudo apt purge'
 
+# cd
+setopt auto_cd
+alias ...='../..'
+alias ....='../../..'
+alias .....='../../../..'
+
 # ls
 alias ls='ls --color=auto'
 alias la='ls -la'
+alias ll='ls -l'
+
+export PATH=$PATH:/home/${USER}/.opencode/bin
+
+alias 'wg_up'='sudo wg-quick up wg0'
+alias 'wg_down'='sudo wg-quick down wg0'
+
+alias grep='grep --color=auto'
+
+alias glog='git log --graph'
