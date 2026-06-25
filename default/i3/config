@@ -14,7 +14,7 @@ set $mod Mod1
 # exec --no-startup-id xinput set-prop 'pointer: USB OPTICAL MOUSE' 'libinput Accel Speed' -0.45 # set via xorg.conf
 
 # keyboard
-exec_always --no-startup-id xset r rate 170 35
+exec_always --no-startup-id xset r rate 170 38
 
 exec --no-startup-id "setxkbmap -option 'grp:win_space_toggle' -layout us,diktor" # ibus might be used instead
 
