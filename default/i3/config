@@ -16,7 +16,7 @@ set $mod Mod1
 # keyboard
 exec_always --no-startup-id xset r rate 170 38
 
-exec --no-startup-id "setxkbmap -option 'grp:win_space_toggle' -layout us,diktor" # ibus might be used instead
+exec --no-startup-id "setxkbmap -option 'grp:win_space_toggle' -layout us,diktor" # ibus used instead
 
 for_window [class=AmneziaVPN] floating enable
 
@@ -24,7 +24,7 @@ for_window [class=AmneziaVPN] floating enable
 # exec --no-startup-id pipewire
 
 # background
-# exec feh --bg-fill /usr/share/backgrounds/Questing_Quokka_Full_Color_3840x2160.png
+exec feh --bg-fill /usr/share/backgrounds/Rainbow_lightbulb_by_Daniel_Micallef.png
 
 # screenshot
 exec --no-startup-id xfce4-clipman
@@ -33,12 +33,12 @@ bindsym Mod4+Shift+s exec xfce4-screenshooter -r
 # window decoration
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 10
+font pango:monaspace krypton extrabold 10
 
 gaps inner 5
 gaps outer 5
 
-default_border normal 4
+default_border normal 5
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -82,7 +82,8 @@ bindsym Mod4+$mod+l exec i3lock -c 04090e
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run -i
+bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons
+# bindsym $mod+d exec --no-startup-id dmenu_run -i
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
