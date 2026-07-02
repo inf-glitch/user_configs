@@ -75,6 +75,9 @@ tiling_drag modifier titlebar
 # start a terminal
 bindsym $mod+Return exec xfce4-terminal
 
+# explorer
+bindsym Mod4+e exec thunar
+
 # Lock
 bindsym Mod4+$mod+l exec i3lock -c 04090e
 
