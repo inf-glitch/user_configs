@@ -38,7 +38,11 @@ font pango:monaspace krypton extrabold 10
 gaps inner 5
 gaps outer 5
 
-default_border normal 5
+default_border pixel 3
+
+client.focused           #d1d5db #d1d5db    #1f2937 #10b981
+client.focused_inactive  #4b5563 #4b5563    #9ca3af #4b5563
+client.unfocused         #4b5563 #4b5563    #9ca3af #4b5563
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
