@@ -1,6 +1,28 @@
-// first better try installing via bum
+// first try installing (ctx-mode) via bum
 
 {
   "$schema": "https://opencode.ai/config.json",
-  "plugin": ["context-mode"]
+  "plugin": ["context-mode"],
+  "provider": {
+    "llama.cpp": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "llama-server (local)",
+      "options": {
+        "baseURL": "http://127.0.0.1:8080"
+      },
+      "models": {
+        "your-model-name": {
+          "name": "Gemma4-31B",
+          "modalities": {
+            "input": ["text"],
+            "output": ["text"]
+          },
+          "limit": {
+            "context": 32384,
+            "output": 2048
+          }
+        }
+      }
+    }
+  }
 }
